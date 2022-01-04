@@ -1,0 +1,89 @@
+/pickuplocation: 
+  post:
+    tags: ["Pickup Locations"]
+    description: Create a pickuplocation
+    produces:
+      - application/json
+    parameters:
+      - name: addressId
+        description: addressId of the pickuplocation.
+        in: formData
+        required: true
+        type: integer
+      - name: description
+        description: description of the pickuplocation.
+        in: formData
+        required: true
+        type: string
+      
+     
+    responses:
+      200:
+        description: pickuplocation
+  get:
+    tags: ["Pickup Locations"]
+    description: pickuplocation of the application
+    produces:
+      - application/json
+    responses:
+      200:
+        description: pickuplocation
+
+
+/pickuplocation/{id}:
+  get:
+    tags: ["Pickup Locations"]
+    description: pickuplocation of the application
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the pickuplocation.
+        in: path
+        required: true
+        type: integer 
+    responses:
+      200:
+        description: pickuplocation        
+
+
+  put:
+    tags: ["Pickup Locations"]
+    description: Update pickuplocation details
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the pickuplocation.
+        in: path
+        required: true
+        type: integer
+      - name: addressId
+        description: addressId of the pickuplocation.
+        in: formData
+        required: false
+        type: integer
+      - name: description
+        description: description of the pickuplocation.
+        in: formData
+        required: false
+        type: stringr
+    responses:
+      200:
+        description: update
+
+  delete:
+    tags: ["Pickup Locations"]
+    description: Delete pickuplocation by pickuplocationId
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the pickuplocation.
+        in: path
+        required: true
+        type: integer
+    responses:
+      200:
+        description: pickuplocation
+

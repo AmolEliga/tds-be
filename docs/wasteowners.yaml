@@ -1,0 +1,127 @@
+/wasteowner:
+  post:
+    tags: ["Waste Owners"]
+    description: Create a wasteowner
+    produces:
+      - application/json
+    parameters:
+      - name: name
+        description: name of the wasteowner.
+        in: formData
+        required: true
+        type: string
+      - name: type
+        description: type of the wasteowner.
+        in: formData
+        required: true
+        type: string
+      - name: addressId
+        description: addressId of the wasteowner.
+        in: formData
+        required: formData
+        type: integer
+      - name: phone
+        description: phone of the wasteowner.
+        in: formData
+        required: true
+        type: string
+      - name: email
+        description: email of the wasteowner.
+        in: formData
+        required: true
+        type: string
+      - name: ID
+        description: ID of the wasteowner.
+        in: formData
+        required: true
+        type: string
+     
+    responses:
+      200:
+        description: wasteowner
+  get:
+    tags: ["Waste Owners"]
+    description: wasteowner of the application
+    produces:
+      - application/json
+    responses:
+      200:
+        description: wasteowner
+
+
+/wasteowner/{id}:
+  get:
+    tags: ["Waste Owners"]
+    description: wasteowner of the application
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the wasteowner.
+        in: path
+        required: true
+        type: integer 
+    responses:
+      200:
+        description: wasteowner        
+
+  put:
+    tags: ["Waste Owners"]
+    description: Update wasteowner details
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the wasteowner.
+        in: path
+        required: true
+        type: integer
+      - name: name
+        description: name of the wasteowner.
+        in: formData
+        required: false
+        type: string
+      - name: type
+        description: type of the wasteowner.
+        in: formData
+        required: false
+        type: string
+      - name: addressId
+        description: addressId of the wasteowner.
+        in: formData
+        required: false
+        type: integer
+      - name: phone
+        description: phone of the wasteowner.
+        in: formData
+        required: false
+        type: string
+      - name: email
+        description: email of the wasteowner.
+        in: formData
+        required: false
+        type: string
+      - name: ID
+        description: ID of the wasteowner.
+        in: formData
+        required: false
+        type: string
+    responses:
+      200:
+        description: update
+
+  delete:
+    tags: ["Waste Owners"]
+    description: Delete wasteowner by wasteownerId
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the wasteowner.
+        in: path
+        required: true
+        type: integer
+    responses:
+      200:
+        description: wasteowner
+

@@ -1,0 +1,26 @@
+/*
+ *
+ * Copyright (c) Tamtron Oy. All rights reserved.
+ *
+ */
+
+var express = require('express');
+const { check } = require('express-validator');
+var router = express.Router();
+
+
+var DocumentController = require('../controllers/orderDocumentController');
+
+//Create
+router.post('/', DocumentController.create);
+
+//Read
+router.get('/', DocumentController.getDocumentReports);
+
+//GetById
+router.get('/:id', DocumentController.findDocumentReport);
+
+//Delete
+router.delete('/:id', DocumentController.delete);
+
+module.exports = router;

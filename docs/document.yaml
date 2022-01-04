@@ -1,0 +1,141 @@
+/documents:
+  get:
+    tags: ["archive document"]
+    description: document of the application
+    produces:
+      - application/json
+    responses:
+      200:
+        description: document
+
+/getDocumentById/{id}:
+  get:
+    tags: ["archive document"]
+    description: document of the application
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the document.
+        in: query
+        required: true
+        type: integer 
+    responses:
+      200:
+        description: document        
+
+/createdocument:   
+  post:
+    tags: ["archive document"]
+    description: Create a document
+    produces:
+      - application/json
+    parameters:
+      - name: orderId
+        description: orderId of the document.
+        in: formData
+        required: true
+        type: integer
+      - name: customer
+        description: customer of the document.
+        in: formData
+        required: true
+        type: string
+      - name: pickup
+        description: pickup of the document.
+        in: formData
+        required: true
+        type: string
+      - name: destination
+        description: destination of the document.
+        in: formData
+        required: true
+        type: string
+      - name: createdAt
+        description: createdAt of the document.
+        in: formData
+        required: true
+        type: string
+      - name: documentname
+        description: documentname of the document.
+        in: formData
+        required: true
+        type: string
+      - name: status
+        description: status of the document.
+        in: formData
+        required: true
+        type: string
+      - name: vehicleid
+        description: vehicleid of the document.
+        in: formData
+        required: true
+        type: string
+      - name: type
+        description: type of the document.
+        in: formData
+        required: true
+        type: string
+      - name: weight
+        description: weight of the document.
+        in: formData
+        required: true
+        type: integer
+      - name: signature
+        description: signature of the document.
+        in: formData
+        required: true
+        type: string
+    responses:
+      200:
+        description: document
+
+
+/document/update/{id}:
+  put:
+    tags: ["archive document"]
+    description: Update document details
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the document.
+        in: formData
+        required: true
+        type: integer
+      - name: name
+        description: name of the document.
+        in: formData
+        required: false
+        type: string
+      - name: key
+        description: Key of the document.
+        in: formData
+        required: false
+        type: string
+      - name: value
+        description: Value of the document.
+        in: formData
+        required: false
+        type: string
+    responses:
+      200:
+        description: update
+
+
+/delete/{id}:
+  delete:
+    tags: ["archive document"]
+    description: Delete document by documentId
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the document.
+        in: path
+        required: true
+        type: integer
+    responses:
+      200:
+        description: document
+

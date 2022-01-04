@@ -1,0 +1,108 @@
+/address:   
+  post:
+    tags: ["Addresses"]
+    description: Create a address
+    produces:
+      - application/json
+    parameters:
+      - name: street
+        description: street of the address.
+        in: formData
+        required: true
+        type: string
+      - name: city
+        description: city of the address.
+        in: formData
+        required: true
+        type: string
+      - name: postalCode
+        description: postalCode of the address.
+        in: formData
+        required: formData
+        type: string
+      - name: area
+        description: area of the address.
+        in: formData
+        required: true
+        type: string
+     
+    responses:
+      200:
+        description: address
+
+  get:
+    tags: ["Addresses"]
+    description: address of the application
+    produces:
+      - application/json
+    responses:
+      200:
+        description: address
+
+/address/{id}:
+  get:
+    tags: ["Addresses"]
+    description: address of the application
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the address.
+        in: path
+        required: true
+        type: integer 
+    responses:
+      200:
+        description: address        
+
+
+  put:
+    tags: ["Addresses"]
+    description: Update address details
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the address.
+        in: path
+        required: true
+        type: integer
+      - name: street
+        description: street of the address.
+        in: formData
+        required: true
+        type: string
+      - name: city
+        description: city of the address.
+        in: formData
+        required: true
+        type: string
+      - name: postalCode
+        description: postalCode of the address.
+        in: formData
+        required: formData
+        type: string
+      - name: area
+        description: area of the address.
+        in: formData
+        required: true
+        type: string
+    responses:
+      200:
+        description: update
+
+  delete:
+    tags: ["Addresses"]
+    description: Delete address by addressId
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the address.
+        in: path
+        required: true
+        type: integer
+    responses:
+      200:
+        description: address
+

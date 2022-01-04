@@ -1,0 +1,129 @@
+/documentmaterial: 
+  post:
+    tags: ["Document Materials"]
+    description: Create a documentMaterial
+    produces:
+      - application/json
+    parameters:
+      - name: documentId
+        description: documentId of the documentMaterial.
+        in: formData
+        required: true
+        type: integer
+      - name: materialId
+        description: materialId of the documentMaterial.
+        in: formData
+        required: true
+        type: integer
+      - name: estimatedWeight
+        description: estimatedWeight of the documentMaterial.
+        in: formData
+        required: true
+        type: integer
+      - name: actualWeight
+        description: actualWeight of the documentMaterial.
+        in: formData
+        required: true
+        type: integer
+      - name: inspectedBy
+        description: inspectedBy of the documentMaterial.
+        in: formData
+        required: formData
+        type: string
+      - name: comments
+        description: comments of the documentMaterial.
+        in: formData
+        required: true
+        type: string
+     
+    responses:
+      200:
+        description: documentMaterial
+
+  get:
+    tags: ["Document Materials"]
+    description: documentMaterial of the application
+    produces:
+      - application/json
+    responses:
+      200:
+        description: documentMaterial
+
+
+/documentmaterial/{id}:
+  get:
+    tags: ["Document Materials"]
+    description: documentMaterial of the application
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the documentMaterial.
+        in: path
+        required: true
+        type: integer 
+    responses:
+      200:
+        description: documentMaterial        
+
+
+  put:
+    tags: ["Document Materials"]
+    description: Update documentMaterial details
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the documentMaterial.
+        in: path
+        required: true
+        type: integer
+      - name: documentId
+        description: documentId of the documentMaterial.
+        in: formData
+        required: false
+        type: integer
+      - name: materialId
+        description: materialId of the documentMaterial.
+        in: formData
+        required: false
+        type: string
+      - name: estimatedWeight
+        description: estimatedWeight of the documentMaterial.
+        in: formData
+        required: false
+        type: integer
+      - name: inspectedBy
+        description: inspectedBy of the documentMaterial.
+        in: formData
+        required: false
+        type: string
+      - name: actualWeight
+        description: actualWeight of the documentMaterial.
+        in: formData
+        required: true
+        type: integer
+      - name: comments
+        description: comments of the documentMaterial.
+        in: formData
+        required: false
+        type: string
+    responses:
+      200:
+        description: update
+
+  delete:
+    tags: ["Document Materials"]
+    description: Delete documentMaterial by documentMATERIAL_ID
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the documentMaterial.
+        in: path
+        required: true
+        type: integer
+    responses:
+      200:
+        description: documentMaterial
+

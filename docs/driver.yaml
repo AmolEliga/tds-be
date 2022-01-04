@@ -1,0 +1,109 @@
+/driver:   
+  post:
+    tags: ["Drivers"]
+    description: Create a driver
+    produces:
+      - application/json
+    parameters:
+      - name: name
+        description: name of the driver.
+        in: formData
+        required: true
+        type: string
+      - name: type
+        description: type of the driver.
+        in: formData
+        required: true
+        type: string
+      - name: addressId
+        description: addressId of the driver.
+        in: formData
+        required: formData
+        type: integer
+      - name: phone
+        description: phone of the driver.
+        in: formData
+        required: true
+        type: string
+     
+    responses:
+      200:
+        description: driver
+
+
+
+  get:
+    tags: ["Drivers"]
+    description: driver of the application
+    produces:
+      - application/json
+    responses:
+      200:
+        description: driver
+
+
+/driver/{id}:
+  get:
+    tags: ["Drivers"]
+    description: driver of the application
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the driver.
+        in: path
+        required: true
+        type: integer 
+    responses:
+      200:
+        description: driver        
+  put:
+    tags: ["Drivers"]
+    description: Update driver details
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the driver.
+        in: path
+        required: true
+        type: integer
+      - name: name
+        description: name of the driver.
+        in: formData
+        required: false
+        type: string
+      - name: type
+        description: type of the driver.
+        in: formData
+        required: false
+        type: string
+      - name: addressId
+        description: addressId of the driver.
+        in: formData
+        required: false
+        type: integer
+      - name: phone
+        description: phone of the driver.
+        in: formData
+        required: false
+        type: string
+    responses:
+      200:
+        description: update
+
+  delete:
+    tags: ["Drivers"]
+    description: Delete driver by driverId
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the driver.
+        in: path
+        required: true
+        type: integer
+    responses:
+      200:
+        description: driver
+

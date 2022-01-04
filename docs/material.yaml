@@ -1,0 +1,99 @@
+/material:   
+  post:
+    tags: ["Materials"]
+    description: Create a material
+    produces:
+      - application/json
+    parameters:
+      - name: type
+        description: type of the material.
+        in: formData
+        required: true
+        type: string
+      - name: weight
+        description: weight of the material.
+        in: formData
+        required: true
+        type: integer
+      - name: code
+        description: code of the material.
+        in: formData
+        required: formData
+        type: string
+     
+    responses:
+      200:
+        description: material
+
+
+
+  get:
+    tags: ["Materials"]
+    description: material of the application
+    produces:
+      - application/json
+    responses:
+      200:
+        description: material
+
+
+/material/{id}:
+  get:
+    tags: ["Materials"]
+    description: material of the application
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the material.
+        in: path
+        required: true
+        type: integer 
+    responses:
+      200:
+        description: material        
+  put:
+    tags: ["Materials"]
+    description: Update material details
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the material.
+        in: path
+        required: true
+        type: integer
+      - name: type
+        description: type of the material.
+        in: formData
+        required: true
+        type: string
+      - name: weight
+        description: weight of the material.
+        in: formData
+        required: true
+        type: integer
+      - name: code
+        description: code of the material.
+        in: formData
+        required: formData
+        type: string
+    responses:
+      200:
+        description: update
+
+  delete:
+    tags: ["Materials"]
+    description: Delete material by driverId
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the material.
+        in: path
+        required: true
+        type: integer
+    responses:
+      200:
+        description: material
+

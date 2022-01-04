@@ -1,0 +1,6 @@
+{
+  "ignore": ["node_modules"],
+  "watch": ["./", "package-lock.json"],
+  "exec": "ts-node ./server.js",
+  "ext": ".ts,.js"
+}

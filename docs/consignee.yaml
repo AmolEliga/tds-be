@@ -1,0 +1,111 @@
+
+
+/consignee:  
+  post:
+    tags: ["Consignees"]
+    description: Create a consignee
+    produces:
+      - application/json
+    parameters:
+      - name: name
+        description: name of the consignee.
+        in: formData
+        required: true
+        type: string
+      - name: type
+        description: type of the consignee.
+        in: formData
+        required: true
+        type: string
+      - name: addressId
+        description: addressId of the consignee.
+        in: formData
+        required: formData
+        type: integer
+      - name: phone
+        description: phone of the consignee.
+        in: formData
+        required: true
+        type: string
+     
+    responses:
+      200:
+        description: consignee
+
+  get:
+    tags: ["Consignees"]
+    description: consignee of the application
+    produces:
+      - application/json
+    responses:
+      200:
+        description: consignee
+
+
+/consignee/{id}:
+  get:
+    tags: ["Consignees"]
+    description: consignee of the application
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the consignee.
+        in: path
+        required: true
+        type: integer 
+    responses:
+      200:
+        description: consignee        
+
+
+  put:
+    tags: ["Consignees"]
+    description: Update consignee details
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the consignee.
+        in: path
+        required: true
+        type: integer
+      - name: name
+        description: name of the consignee.
+        in: formData
+        required: false
+        type: string
+      - name: type
+        description: type of the consignee.
+        in: formData
+        required: false
+        type: string
+      - name: addressId
+        description: addressId of the consignee.
+        in: formData
+        required: false
+        type: integer
+      - name: phone
+        description: phone of the consignee.
+        in: formData
+        required: false
+        type: string
+    responses:
+      200:
+        description: update
+
+  delete:
+    tags: ["Consignees"]
+    description: Delete consignee by consigneeId
+    produces:
+      - application/json
+    parameters:
+      - name: id
+        description: id of the consignee.
+        in: path
+        required: true
+        type: integer
+    responses:
+      200:
+        description: consignee
+

@@ -1,0 +1,6 @@
+1) Create a folder in windows with postgres_container
+2) move the "docker-compose.yml" and "provisioning.sql" file to this folder
+3) Open cmd in this folder and run the command "docker-compose up"
+4) It will install the postgres and create tables in build the image in Docker Desktop
+5) Connect to Postgres from your local PGAdmin to the specified port.
+ 
